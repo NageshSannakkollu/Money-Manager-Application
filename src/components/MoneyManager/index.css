@@ -1,0 +1,104 @@
+/* Write your CSS here */
+.app-container {
+  min-height: 100vh;
+  padding: 50px 60px;
+}
+.account-holder-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  height: 200px;
+  background-size: cover;
+  padding: 50px 60px;
+  font-family: 'Roboto';
+  border-radius: 17px;
+}
+
+@media screen and(min-width:768px) {
+  .account-holder-container {
+    min-width: 550px;
+    background-size: 100%;
+    border: 1px solid #000;
+  }
+}
+.account-holder {
+  font-size: 23px;
+  color: #475569;
+}
+.welcome-back {
+  color: #7e858e;
+}
+
+.money-manager {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0b69ff;
+  margin-left: 5px;
+}
+
+.transactions-history-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transactions-add {
+  width: 40%;
+  padding: 20px;
+  border: 1px solid #000;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.add-transactions-heading {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.input-name {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.inputs {
+  padding: 5px;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+
+.inputs-type {
+  padding: 5px;
+  width: 100%;
+}
+.inputs-container {
+  margin-top: 10px;
+}
+
+.add-button {
+  background-color: #0b69ff;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 12px;
+  border: 0;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.history-container {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 15px;
+  height: 350px;
+  width: 58%;
+  margin-top: 20px;
+}
+
+.values-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+  padding: 2px 20px;
+  min-height: 30px;
+}
+
+.value {
+  margin-right: 30px;
+}
