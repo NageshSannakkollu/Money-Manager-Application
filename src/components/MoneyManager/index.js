@@ -1,5 +1,7 @@
 import {Component} from 'react'
 import {v4} from 'uuid'
+import MoneyDetails from '../MoneyDetails'
+import TransactionItem from '../TransactionItem'
 import './index.css'
 
 const transactionTypeOptions = [
@@ -33,6 +35,14 @@ class MoneyManager extends Component {
 
   changeInType = event => {
     this.setState({optionId: event.target.value})
+  }
+
+  deleteTransaction = id => {
+    const {transactionsList} = this.state
+    const finalTransactionsList = transactionsList.filter(
+      eachTransactions => eachTransactions.id !== id,
+    )
+    this.setState({transactionsList: finalTransactionsList})
   }
 
   onSubmitForm = event => {
@@ -177,6 +187,11 @@ class MoneyManager extends Component {
             <span className="money-manager">Money Manager</span>
           </p>
         </div>
+        <MoneyDetails
+          balanceAmount={balanceAmount}
+          incomeAmount={incomeAmount}
+          expensesAmount={expensesAmount}
+        />
         <div className="transactions-history-container">
           <form className="transactions-add" onSubmit={this.onSubmitForm}>
             <h1 className="add-transactions-heading">Add Transactions</h1>
@@ -190,11 +205,19 @@ class MoneyManager extends Component {
           <div className="history-container">
             <h1 className="add-transactions-heading">History</h1>
             <div className="values-container">
-              <h4 className="value">Title</h4>
-              <h4 className="value">Amount</h4>
-              <h4 className="value">Type</h4>
+              <p className="value">Title</p>
+              <p className="value">Amount</p>
+              <p className="value">Type</p>
             </div>
-            <p>Hello</p>
+            <ul className="transactions-list">
+              {transactionsList.map(eachTransactions => (
+                <TransactionItem
+                  transactionDetails={eachTransactions}
+                  key={eachTransactions.id}
+                  deleteTransaction={this.deleteTransaction}
+                />
+              ))}
+            </ul>
           </div>
         </div>
       </div>
